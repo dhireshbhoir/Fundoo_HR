@@ -1,0 +1,123 @@
+<div class="card frame">
+    <div class="card-block">
+        <div class="heading1">Engineer Data</div><br/>
+        <!-- Form Name -->
+        <div class="formName">Contact And Personal Data</div>
+        <hr/>
+        <p>Please enter the contact information</p>
+        <form name="contactAndPersonalDataForm" method="post">
+
+            <!-- Mobile-->
+            <div class="form-group required">
+                <label class="control-label">Mobile Number</label><br/>
+                <div class="">
+                    <input id="mobileNumber" class="" ng-model="mobileNumber" name="mobileNumber" type="text" autocomplete="off" placeholder="mobile number" required="" ng-pattern="/^(\+\d{1,3}[- ]?)?\d{10}$/" /><br/>
+                    <p ng-show="contactAndPersonalDataForm.mobileNumber.$error.pattern" style="color:red;">Please enter 10 digit mobile no</p>
+                </div>
+            </div><br/>
+
+            <!-- Email-->
+            <div class="form-group required">
+                <label class="control-label">Email Id</label><br/>
+                <div class="">
+                    <input id="emailId" class="" ng-model="emailId" type="email" autocomplete="off" disabled="true" />
+                </div>
+            </div><br/>
+
+
+            <!-- Date of birth-->
+            <div class="form-group required">
+                <label class="control-label">Date of Birth(DD/MM/YYYY)</label><br/>
+                <div id="sandbox-container">
+                    <input type="text" class="" ng-model="birthDate" placeholder="dd/mm/yyyy" required="" />
+                </div>
+            </div><br/>
+
+
+            <!-- Father's name-->
+            <div class="form-group required">
+                <label class="control-label">Father Name</label><br/>
+                <div class="">
+                    <input id="fatherName" class="" ng-model="fatherName" name="fatherName" autocomplete="off" type="text" placeholder="father name" ng-pattern="/^([^0-9]*)$/" required="" /><br/>
+                    <p ng-show="contactAndPersonalDataForm.fatherName.$error.pattern" style="color:red;">Father name should not contain numbers</p>
+                </div>
+            </div><br/>
+
+            <!-- Father Mobile no-->
+            <div class="form-group required">
+                <label class="control-label">Father Mobile Number</label><br/>
+                <p>Please Enter your Father or any Other Permanent Number</p>
+                <div class="">
+                    <input id="fatherMobileNumber" class="" ng-model="fatherMobileNumber" name="fatherMobileNumber" autocomplete="off" type="text" placeholder="father mobile number" required="" ng-pattern="/^(\+\d{1,3}[- ]?)?\d{10}$/" /><br/>
+                    <p ng-show="contactAndPersonalDataForm.fatherMobileNumber.$error.pattern" style="color:red;">Please enter 10 digit mobile no</p>
+                </div>
+            </div><br/>
+
+            <!--Father Occupation-->
+            <div class="form-group required">
+                <label class="control-label">Father Occupation</label><br/>
+                <div class="">
+                    <input id="fatherOccupation" class="" ng-model="fatherOccupation" name="fatherOccupation" type="text" placeholder="Father Occupation" autocomplete="off" required="" />
+                </div>
+            </div><br/>
+
+            <!-- Annual Salary-->
+            <div class="form-group required">
+                <label class="control-label ">Annual Salary(p.a.)</label><br/>
+                <!--<div class="inner-addon left-addon ">
+                <i class="fa fa-inr"></i>
+                <input id="annualSalary" class="" ng-model="annualSalary" name="annualSalary" type="text" autocomplete="off" placeholder="0.00" ng-pattern="/^[+-]?\d+(\.\d+)?$/" required="" /><br/>
+                <p ng-show="contactAndPersonalDataForm.annualSalary.$error.pattern" style="color:red;">Salary should contain numbers</p>
+            </div>-->
+                <div id="radio1" class="">
+                    <input type="radio" ng-model="annualSalary" value="0-5 lacs" /> &#160;&#160;0-5 Lacs<br/>
+                    <input type="radio" ng-model="annualSalary" value="5-10 lacs" /> &#160;&#160;5-10 Lacs<br/>
+                    <input type="radio" ng-model="annualSalary" value=">10 lacs" /> &#160;&#160;>10 Lacs
+                </div>
+            </div><br/>
+            <!-- Current address-->
+            <div class="form-group required">
+                <label class="control-label">Current Address</label><br/>
+                <p>If staying in Ashok PG Accomodation in vashi. Mention the same as Address</p>
+                <div class="">
+                    <textarea id="currentAddress" class="" ng-model="currentAddress" name="currentAddress" autocomplete="off" placeholder="enter address here.." required=""></textarea>
+                </div>
+            </div>
+
+            <!-- Save as above-->
+            <div class="form-group">
+                <label class=" control-label"></label>
+                <input id="check" type="checkbox" ng-model="hasChecked" ng-click="sameAsAbove()" /> same as above
+            </div>
+
+            <!-- Permanant address-->
+            <div class="form-group ">
+                <label class="control-label">Permanant Address</label><br/>
+                <div class="">
+                    <textarea id="permanantAddress" class="" ng-model="permanantAddress" autocomplete="off" name="permanantAddress" placeholder="enter address here.."></textarea>
+                </div>
+            </div><br/><br/>
+
+            <div class="form-group required">
+                <label class="control-label">Photo</label><img ng-show="contactAndPersonalDataForm.file.$valid" ngf-thumbnail="picFile" class="thumb "><br/>
+
+                <input type="button" ngf-select ng-model="picFile" name="file" class="btn btn-default col-sm-6 col-lg-6 col-md-6 col-xs-6" value="Select Picture" accept="image/*" ngf-max-size="2MB" required="" ngf-model-invalid="errorFile" />
+                <i ng-show="contactAndPersonalDataForm.file.$error.maxSize">File too large
+              {{errorFile.size / 1000000|number:1}}MB: max 2M</i>
+            </div>
+            <br/><br/><br/><br/><br/>
+
+            <div class="form-group">
+                <!-- Previous-->
+                <div id="prev" class="col-md-6 col-sm-6 col-xs-6">
+                    <button class="btn btn-info" ui-sref="qualificationData">Previous</button>
+                </div>
+                <!-- Submit-->
+                <div id="next" class="col-md-6 col-sm-6 col-xs-6">
+                    <!--<button class="btn btn-info" ng-click="storeData(picFile)" ng-disabled="!annualSalary||contactAndPersonalDataForm.$invalid">Submit</button>-->
+                    <button class="btn btn-info" ng-click="storeData(picFile)" ng-disabled="">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
