@@ -7,9 +7,9 @@ angular.module('fundooApp')
 
         console.log("BankInformation");
         var bankJsonObject;
-        var bank_Info_Object;
+        var bankInfoObject;
 
-        //function performing on next button in form    
+        //function performing on next button in form
         $scope.next = function() {
             bankJsonObject = {
                 "pan": $scope.panNo,
@@ -20,15 +20,16 @@ angular.module('fundooApp')
 
             /*calling setData from localStorageService to store data in localstorage*/
             localStorageService.setData("bank_information", bankJsonObject)
+            console.log(localStorageService.getData());
         };
-        
+
         /*calling getData from localStorageService to get data from localstorage*/
-        bank_Info_Object = localStorageService.getData().bank_information;
+        bankInfoObject = localStorageService.getData().bank_information;
 
         fieldArray = ['panNo', 'bankName', 'accountNumber', 'bankIfscCode'];
         jsonKeyArray = ['pan', 'bank_name', 'bank_account_number', 'bank_ifsc_code'];
         for (i = 0; i < fieldArray.length; i++) {
-            $scope[fieldArray[i]] = bank_Info_Object[jsonKeyArray[i]];
+            $scope[fieldArray[i]] = bankInfoObject[jsonKeyArray[i]];
         }
 
     });

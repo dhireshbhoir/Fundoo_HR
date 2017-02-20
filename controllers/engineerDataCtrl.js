@@ -11,7 +11,7 @@ angular.module('fundooApp')
 
         $scope.cityList = ["Mumbai", "Banglore", "Pune", "Hyaderabad", "Chennai"];
 
-        //function performing on next button in form    
+        //function performing on next button in form
         $scope.next = function() {
             engineerJsonObject = {
                 "name": $scope.name,

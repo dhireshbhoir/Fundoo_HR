@@ -6,6 +6,8 @@ angular.module('fundooApp')
     .controller('employeeFormController', function($scope, $state) {
         var empDataFormat;
         email = "admin@gmail.com";
+
+        /* JSON object to store employee data */
         empDataFormat = {
             "engineer_data": {
                 "name": "",
@@ -50,8 +52,11 @@ angular.module('fundooApp')
 
         console.log("inside empForm");
 
+        //function performing on employee form button in form
         $scope.createObject = function() {
             console.log("Object created in localstorage");
+
+            /* storing empDataFormat into localstorage*/
             localStorage.setItem("EmployeeData", JSON.stringify(empDataFormat));
         };
 
