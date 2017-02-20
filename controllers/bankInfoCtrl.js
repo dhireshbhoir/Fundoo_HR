@@ -8,6 +8,8 @@ angular.module('fundooApp')
         console.log("BankInformation");
         var bankJsonObject;
         var bank_Info_Object;
+
+        //function performing on next button in form    
         $scope.next = function() {
             bankJsonObject = {
                 "pan": $scope.panNo,
@@ -15,9 +17,12 @@ angular.module('fundooApp')
                 "bank_account_number": Number.parseInt($scope.accountNumber),
                 "bank_ifsc_code": $scope.bankIfscCode
             };
+
+            /*calling setData from localStorageService to store data in localstorage*/
             localStorageService.setData("bank_information", bankJsonObject)
         };
-
+        
+        /*calling getData from localStorageService to get data from localstorage*/
         bank_Info_Object = localStorageService.getData().bank_information;
 
         fieldArray = ['panNo', 'bankName', 'accountNumber', 'bankIfscCode'];

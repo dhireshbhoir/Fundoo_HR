@@ -11,6 +11,7 @@ angular.module('fundooApp')
 
         $scope.disciplineList = ["Computer", "IT", "Civil", "Electrical", "Electronic", "Mechanical"];
 
+        //function performing on next button in form
         $scope.next = function() {
             qualificationJsonObject = {
                 "diploma": $scope.diploma,
@@ -23,9 +24,12 @@ angular.module('fundooApp')
                 "training_duration": Number.parseInt($scope.trainingDuration),
                 "training": $scope.training
             };
+
+            /*calling setData from localStorageService to store data in localstorage*/
             localStorageService.setData("qualification_data", qualificationJsonObject)
         };
 
+        /*calling getData from localStorageService to get data from localstorage*/
         QualificationDataObject = localStorageService.getData().qualification_data;
         fieldArray = ['diploma', 'degree', 'selectedDiscipline', 'yearOfPassing', 'aggregate', 'finalYear', 'trainingInstitute', 'trainingDuration', 'training'];
         jsonKeyArray = ['diploma', 'degree', 'discipline', 'year_of_passing', 'aggregate', 'final_year', 'training_institute', 'training_duration', 'training'];

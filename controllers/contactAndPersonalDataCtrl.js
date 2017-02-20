@@ -48,20 +48,14 @@ angular.module('fundooApp')
             fd.append("file", file);
             fd.append("engineer_data", JSON.stringify(localStorageService.getData()));
 
-            // var res = $http.post('http://192.168.0.31:3030/createEngineerData',fd,{
-            //   headers: { 'Content-Type': undefined},
-            //     transformRequest: angular.identity
-            //  })
-            // res.then(function(d) {
-            // console.log("Successful",d);
-            // });
-
+            /*calling postRequest from restService to store data on server*/
             restService.postRequest('createEngineerData', fd)
                 .then(function(data, status, headers, config) {
                     console.log("Successful", data);
                 });
         };
 
+        /*calling getData from localStorageService to get data from localstorage*/
         contactAndPersonalDataObject = localStorageService.getData().contact_and_personal_data;
         fieldArray = ['mobileNumber', 'emailId', 'birthDate', 'fatherName', 'fatherMobileNumber', 'fatherOccupation', 'annualSalary', 'currentAddress', 'permanantAddress'];
         jsonKeyArray = ['mobile_number', 'email_id', 'date_of_birth', 'father_name', 'father_mobile_number', 'father_occupation', 'annual_salary', 'current_address', 'permanent_address'];

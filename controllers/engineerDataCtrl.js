@@ -11,6 +11,7 @@ angular.module('fundooApp')
 
         $scope.cityList = ["Mumbai", "Banglore", "Pune", "Hyaderabad", "Chennai"];
 
+        //function performing on next button in form    
         $scope.next = function() {
             engineerJsonObject = {
                 "name": $scope.name,
@@ -26,6 +27,7 @@ angular.module('fundooApp')
             console.log(localStorageService.getData());
         };
 
+        /*calling getData from localStorageService to get data from localstorage*/
         engineerDataObject = localStorageService.getData().engineer_data;
         $scope.name = engineerDataObject["name"];
         $scope.hireCity = engineerDataObject["hire_city"];
