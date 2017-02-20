@@ -1,4 +1,9 @@
-angular.module("fundooApp").service('restService', function($q, $http) {
+/**
+ *restService Service
+ */
+
+angular.module("fundooApp").
+service('restService', function($q, $http) {
     var baseUrl = "http://192.168.0.31:3030/";
     /** function to POST */
     this.postRequest = function(path, query) {

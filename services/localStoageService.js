@@ -1,3 +1,7 @@
+/**
+ *localStorageService Service
+ */
+
 angular.module('fundooApp')
     .service('localStorageService', function() {
 
