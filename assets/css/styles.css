@@ -15,6 +15,9 @@ body{
     background-color: white;
 }
 
+#loaderimg {
+    margin-left: 40%;
+}
 
 .success {
       width: 50%;

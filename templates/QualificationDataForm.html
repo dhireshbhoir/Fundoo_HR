@@ -97,10 +97,13 @@
                 </div>
                 <!-- Next-->
                 <div id="next" class="col-md-6 col-sm-6 col-xs-6">
-                    <button class="btn btn-info" ui-sref="contactAndPersonalData" ng-disabled="!diploma||!degree||qualificationData.$invalid" ng-click="next()">Next</button>
+                    <button class="btn btn-info" ui-sref="contactAndPersonalData" ng-disabled="!diploma||!degree||qualificationData.$invalid||Loading" ng-click="next()">Next</button>
                     <!-- <button class="btn btn-info" ui-sref="contactAndPersonalData" ng-disabled="" ng-click="next()">Next</button> -->
                 </div>
             </div>
+            <span class="loader">
+            <img ng-if="Loading" src="./assets/images/loader.gif" width="40px" height="40px" id="loaderimg" />
+            </span>
         </form>
     </div>
 </div>

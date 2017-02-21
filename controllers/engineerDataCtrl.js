@@ -13,6 +13,7 @@ angular.module('fundooApp')
 
         //function performing on next button in form
         $scope.next = function() {
+            $scope.Loading = true;
             engineerJsonObject = {
                 "name": $scope.name,
                 "hire_city": $scope.hireCity,

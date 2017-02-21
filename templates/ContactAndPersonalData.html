@@ -99,7 +99,7 @@
             </div><br/><br/>
 
             <div class="form-group required">
-                <label class="control-label">Photo</label><img ng-show="contactAndPersonalDataForm.file.$valid" ngf-thumbnail="picFile" class="thumb"/><br/>
+                <label class="control-label">Photo</label><img ng-show="contactAndPersonalDataForm.file.$valid" ngf-thumbnail="picFile" class="thumb" /><br/>
 
                 <input type="button" ngf-select ng-model="picFile" name="file" class="btn btn-default col-sm-4 col-lg-4 col-md-4 col-xs-4" value="Select Picture" accept="image/*" ngf-max-size="2MB" required="" ngf-model-invalid="errorFile" />
                 <i ng-show="contactAndPersonalDataForm.file.$error.maxSize">File too large
@@ -114,10 +114,13 @@
                 </div>
                 <!-- Submit-->
                 <div id="next" class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
-                    <button class="btn btn-info" ng-click="storeData(picFile)" ng-disabled="!annualSalary||contactAndPersonalDataForm.$invalid">Submit</button>
+                    <button class="btn btn-info" ng-click="storeData(picFile)" ng-disabled="!annualSalary||contactAndPersonalDataForm.$invalid||Loading">Submit</button>
                     <!-- <button class="btn btn-info" ng-click="storeData(picFile)" ng-disabled="">Submit</button> -->
                 </div>
             </div>
+            <span class="loader">
+            <img ng-if="Loading" src="./assets/images/loader.gif" width="40px" height="40px" id="loaderimg" />
+            </span>
         </form>
     </div>
 </div>

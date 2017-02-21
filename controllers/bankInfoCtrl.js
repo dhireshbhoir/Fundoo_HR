@@ -11,6 +11,7 @@ angular.module('fundooApp')
 
         //function performing on next button in form
         $scope.next = function() {
+            $scope.Loading = true;
             bankJsonObject = {
                 "pan": $scope.panNo,
                 "bank_name": $scope.bankName,

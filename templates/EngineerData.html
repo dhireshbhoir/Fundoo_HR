@@ -33,7 +33,8 @@
                 <label class="control-label">Originals Submitted</label><br/>
                 <p>Please Ensure the submission of all the below mentioned certificates</p>
                 <div id="radio1">
-                    <input type="checkbox" name="EngineerCertificates" ng-model="EngineerCertificates" />&#160;&#160;Engineer Certificates<br/>
+                    <input type="checkbox" name="EngineerCertificates" ng-model="EngineerCertificates" />&#160;&#160;Engineer Certificates
+                    <br/>
                     <input type="checkbox" name="FinalYearMarksheet" ng-model="FinalYearMarksheet" />&#160;&#160;FinalYear Marksheet
                 </div>
             </div>
@@ -43,10 +44,13 @@
             <div class="form-group ">
                 <!-- Next-->
                 <div id="next" class="col-md-12 col-sm-12 col-xs-12">
-                    <button class="btn btn-info" ui-sref="bankInfoForm"  ng-disabled="!hireCity||engineerForm.$invalid" ng-click="next()">Next</button>
+                    <button class="btn btn-info" ui-sref="bankInfoForm" ng-disabled="!hireCity||engineerForm.$invalid||Loading" ng-click="next()">Next</button>
                     <!-- <button class="btn btn-info" ui-sref="bankInfoForm" ng-disabled="" ng-click="next()">Next</button> -->
                 </div>
             </div>
+            <span class="loader">
+            <img ng-if="Loading" src="./assets/images/loader.gif" width="40px" height="40px" id="loaderimg" />
+            </span>
         </form>
     </div>
 </div>
