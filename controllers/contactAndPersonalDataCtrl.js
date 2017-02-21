@@ -3,7 +3,7 @@
  */
 
 angular.module('fundooApp')
-    .controller('contactAndPersonalDataController', function($scope, $http, $state, localStorageService, restService) {
+    .controller('contactAndPersonalDataController', function($scope, $http, $state, successfulService, localStorageService, restService) {
       console.log("inside personalForm");
 
         var contactAndPersonalJsonObject;
@@ -51,7 +51,12 @@ angular.module('fundooApp')
             /*calling postRequest from restService to store data on server*/
             restService.postRequest('createEngineerData', fd)
                 .then(function(data, status, headers, config) {
-                    console.log("Successful", data);
+                    console.log("Successful",data.data);
+                    successfulService.successData=data.data;
+                    console.log(successfulService.successData);
+                    $state.go('successful');
+                },function(error){
+                  alert(error);
                 });
         };
 

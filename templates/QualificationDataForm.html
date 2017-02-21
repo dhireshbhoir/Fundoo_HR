@@ -77,8 +77,8 @@
             <div class="form-group required">
                 <label class="control-label">Please Enter Training Duration in Months</label>
                 <div class="">
-                    <input id="trainingDuration" ng-model="trainingDuration" name="trainingDuration" autocomplete="off" type="text" placeholder="duration of training" ng-pattern="/^[0-9]*$/" required="" />
-                    <span ng-show="qualificationData.trainingDuration.$error.pattern" style="color:red;">Enter the months in number </span>
+                    <input id="trainingDuration" ng-model="trainingDuration" name="trainingDuration" autocomplete="off" type="text" placeholder="duration of training" ng-pattern="/^[0-9]*$/" required="" /><br/>
+                    <span ng-show="qualificationData.trainingDuration.$error.pattern" style="color:red;">Enter no. of months in digits </span>
                 </div>
             </div><br/>
 
@@ -97,8 +97,8 @@
                 </div>
                 <!-- Next-->
                 <div id="next" class="col-md-6 col-sm-6 col-xs-6">
-                    <!-- <button class="btn btn-info" ui-sref="contactAndPersonalData" ng-disabled="!diploma||!degree||qualificationData.$invalid" ng-click="next()">Next</button> -->
-                    <button class="btn btn-info" ui-sref="contactAndPersonalData" ng-disabled="" ng-click="next()">Next</button>
+                    <button class="btn btn-info" ui-sref="contactAndPersonalData" ng-disabled="!diploma||!degree||qualificationData.$invalid" ng-click="next()">Next</button>
+                    <!-- <button class="btn btn-info" ui-sref="contactAndPersonalData" ng-disabled="" ng-click="next()">Next</button> -->
                 </div>
             </div>
         </form>

@@ -60,6 +60,7 @@ angular.module('fundooApp', ['ui.router','ngFileUpload'])
         /* configure successful state */
         state('successful', {
             url: '/successful',
+            controller: 'successController',
             templateUrl: './templates/Successful.html'
         });
 
