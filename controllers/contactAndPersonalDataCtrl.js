@@ -55,6 +55,7 @@ angular.module('fundooApp')
                     console.log("Successful", data.data);
                     successfulService.successData = data.data;
                     console.log(successfulService.successData);
+                    localStorage.removeItem("EmployeeData");
                     $state.go('successful');
                 }, function(error) {
                     alert(error);

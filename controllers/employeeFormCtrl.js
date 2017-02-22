@@ -59,5 +59,10 @@ angular.module('fundooApp')
             /* storing empDataFormat into localstorage*/
             localStorage.setItem("EmployeeData", JSON.stringify(empDataFormat));
         };
+$(document).ready(function() {
+        function disableBack() { window.history.forward() }
 
+        window.onload = disableBack();
+        window.onpageshow = function(evt) { if (evt.persisted) disableBack() }
+    });
     });
