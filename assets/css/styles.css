@@ -14,10 +14,6 @@ body {
     background-color: white;
 }
 
-#loaderimg {
-    margin-left: 40%;
-}
-
 .success {
     width: 50%;
     margin-left: 25%;
@@ -56,19 +52,6 @@ body {
         text-align: center;
         background-color: white;
     }
-}
-
-.thumb {
-    width: 100px;
-    height: 110px;
-    left: 55%;
-    position: absolute;
-}
-
-.successthumb {
-    width: 130px;
-    height: 100px;
-    position: relative;
 }
 
 .frame {
@@ -200,4 +183,25 @@ input[type="text"]:focus, input[type="text"].focus, input[type="email"]:focus, i
 .form-group.required .control-label:after {
     content: "*";
     color: red;
+}
+
+.thumb {
+    width: 100px;
+    height: 110px;
+    left: 55%;
+    position: absolute;
+}
+
+#year {
+    width: 30%;
+}
+
+.successthumb {
+    width: 130px;
+    height: 100px;
+    position: relative;
+}
+
+.loader {
+    text-align: center;
 }

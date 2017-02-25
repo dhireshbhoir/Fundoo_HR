@@ -4,6 +4,7 @@
 
 angular.module('fundooApp')
     .controller('employeeFormController', function($scope, $state) {
+
         var empDataFormat;
         email = "admin@gmail.com";
 
@@ -59,10 +60,9 @@ angular.module('fundooApp')
             /* storing empDataFormat into localstorage*/
             localStorage.setItem("EmployeeData", JSON.stringify(empDataFormat));
         };
-$(document).ready(function() {
-        function disableBack() { window.history.forward() }
 
-        window.onload = disableBack();
-        window.onpageshow = function(evt) { if (evt.persisted) disableBack() }
-    });
+        $(document).ready(function() {
+            $(this).scrollTop(0);
+            window.history.forward(-1)
+        });
     });

@@ -4,6 +4,12 @@
 
 angular.module('fundooApp')
     .controller('engineerFormController', function($scope, $state, localStorageService) {
+
+        /*page scroll position to top at page load*/
+        $(document).ready(function() {
+            $(this).scrollTop(0);
+        });
+
         console.log("inside EngForm");
 
         var engineerJsonObject;
@@ -34,8 +40,5 @@ angular.module('fundooApp')
         $scope.hireCity = engineerDataObject["hire_city"];
         $scope.EngineerCertificates = engineerDataObject["original_submitted"]["engineer_certificates"];
         $scope.FinalYearMarksheet = engineerDataObject["original_submitted"]["final_year_marksheet"];
-
-
-
 
     });

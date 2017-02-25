@@ -3,7 +3,7 @@
  */
 
 angular.module('fundooApp')
-    .controller('contactAndPersonalDataController', function($scope, $http, $state, successfulService, localStorageService, restService) {
+    .controller('contactAndPersonalDataController', function($scope, $http, $state, localStorageService, restService) {
         console.log("inside personalForm");
 
         var contactAndPersonalJsonObject;
@@ -21,6 +21,7 @@ angular.module('fundooApp')
             }
         }
 
+        /*jQuery for showing datepicker*/
         $('#sandbox-container input').datepicker({
             autoclose: true
         });
@@ -53,9 +54,8 @@ angular.module('fundooApp')
             restService.postRequest('createEngineerData', fd)
                 .then(function(data, status, headers, config) {
                     console.log("Successful", data.data);
-                    successfulService.successData = data.data;
-                    console.log(successfulService.successData);
-                    localStorage.removeItem("EmployeeData");
+                    sessionStorage.setItem('successData', JSON.stringify(data.data));
+                    // localStorage.removeItem("EmployeeData");
                     $state.go('successful');
                 }, function(error) {
                     alert(error);
@@ -70,4 +70,19 @@ angular.module('fundooApp')
             $scope[fieldArray[i]] = contactAndPersonalDataObject[jsonKeyArray[i]];
         }
 
+        $(document).ready(function() {
+            function disableBack() {
+                window.history.forward()
+            }
+            $(this).scrollTop(0);
+            window.onload = disableBack();
+            window.onpageshow = function(evt) {
+                if (evt.persisted) disableBack()
+            }
+
+
+            // window.history.forward(-1)
+
+
+        });
     });

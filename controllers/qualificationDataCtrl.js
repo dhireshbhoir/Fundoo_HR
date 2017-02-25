@@ -5,11 +5,23 @@
 angular.module('fundooApp')
     .controller('qualificationDataController', function($scope, $state, localStorageService) {
 
+        /*page scroll position to top at page load*/
+        $(document).ready(function() {
+            $(this).scrollTop(0);
+        });
+
         console.log("Qualification");
         var qualificationJsonObject;
         var QualificationDataObject;
 
         $scope.disciplineList = ["Computer", "IT", "Civil", "Electrical", "Electronic", "Mechanical"];
+
+        var year = [];
+        for (i = new Date().getFullYear(); i > 1990; i--) {
+            year.push(i);
+        }
+        $scope.yearOptions = year;
+
 
         //function performing on next button in form
         $scope.next = function() {

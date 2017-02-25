@@ -5,6 +5,11 @@
 angular.module('fundooApp')
     .controller('bankInfoFormController', function($scope, $state, localStorageService) {
 
+        /*page scroll position to top at page load*/
+        $(document).ready(function() {
+            $(this).scrollTop(0);
+        });
+
         console.log("BankInformation");
         var bankJsonObject;
         var bankInfoObject;

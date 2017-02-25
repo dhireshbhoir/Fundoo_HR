@@ -25,7 +25,6 @@
                 </div>
             </div>
 
-
             <!-- Discipline-->
             <div class="form-group required">
                 <label class="control-label">Discipline</label><br/>
@@ -40,11 +39,10 @@
             <!-- Year of passing-->
             <div class="form-group required">
                 <label class="control-label">Year Of Passing</label><br/>
-                <div class="">
-                    <input id="yearOfPassing" ng-model="yearOfPassing" name="yearOfPassing" type="text" autocomplete="off" placeholder="year of passing" ng-pattern="/^(\+\d{1,3}[- ]?)?\d{4}$/" required="" /><br/>
-                    <span ng-show="qualificationData.yearOfPassing.$error.pattern" style="color:red;">Enter the year in 4 digit number</span>
-                </div>
-            </div><br/>
+                <select ng-model="yearOfPassing" required="" id="year" class="form-group">
+           <option ng-repeat="option in yearOptions" value="{{option}}">{{option}}</option>
+        </select>
+            </div>
 
             <!-- Aggregate-->
             <div class="form-group required">
@@ -54,7 +52,6 @@
                     <span ng-show="qualificationData.aggregate.$error.pattern" style="color:red;">Aggregate should contain digits only</span>
                 </div>
             </div><br/>
-
 
             <!-- Final year-->
             <div class="form-group required">
@@ -101,8 +98,8 @@
                     <!-- <button class="btn btn-info" ui-sref="contactAndPersonalData" ng-disabled="" ng-click="next()">Next</button> -->
                 </div>
             </div>
-            <span class="loader">
-            <img ng-if="Loading" src="./assets/images/loader.gif" width="40px" height="40px" id="loaderimg" />
+            <span class="loader col-md-12 col-sm-12 col-xs-12">
+            <img ng-if="Loading" src="./assets/images/loader.gif" width="40px" height="40px" id="" />
             </span>
         </form>
     </div>
