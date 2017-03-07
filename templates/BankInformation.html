@@ -32,7 +32,7 @@
                 <p>Same as in the Cheque Book</p>
                 <div class="">
                     <input id="accountNumber" class="" ng-model="accountNumber" name="accountNumber" type="text" autocomplete="off" placeholder="account number" ng-pattern="/^[1-9]\d*$/" required="" /><br/>
-                    <p ng-show="bankInfoForm.accountNumber.$error.pattern" style="color:red;">Account no. should contain digits only</p>
+                    <p ng-show="bankInfoForm.accountNumber.$error.pattern" style="color:red;">Invalid account number</p>
                 </div>
             </div><br/>
 

@@ -39,7 +39,7 @@
             <!-- Year of passing-->
             <div class="form-group required">
                 <label class="control-label">Year Of Passing</label><br/>
-                <select ng-model="yearOfPassing" required="" id="year" class="form-group">
+                <select ng-model="yearOfPassing" required="" id="year" class="form-group" required="">
            <option ng-repeat="option in yearOptions" value="{{option}}">{{option}}</option>
         </select>
             </div>
@@ -49,7 +49,7 @@
                 <label class="control-label">Percentage Aggregate(%)</label><br/>
                 <div class="">
                     <input class="" id="aggregate" ng-model="aggregate" name="aggregate" autocomplete="off" type="text" placeholder="aggregate" required="" ng-pattern="/^[+-]?\d+(\.\d+)?$/" /><br/>
-                    <span ng-show="qualificationData.aggregate.$error.pattern" style="color:red;">Aggregate should contain digits only</span>
+                    <span ng-show="qualificationData.aggregate.$error.pattern" style="color:red;">Aggregate should contain numbers only</span>
                 </div>
             </div><br/>
 
@@ -58,7 +58,7 @@
                 <label class="control-label">Percentage Final Year(%)</label><br/>
                 <div class="">
                     <input id="finalYear" ng-model="finalYear" name="finalYear" autocomplete="off" type="text" placeholder="final year %" required="" ng-pattern="/^[+-]?\d+(\.\d+)?$/" /><br/>
-                    <span ng-show="qualificationData.finalYear.$error.pattern" style="color:red;">Final year % should contain digits only</span>
+                    <span ng-show="qualificationData.finalYear.$error.pattern" style="color:red;">Final year % should contain numbers only</span>
                 </div>
             </div><br/>
 
@@ -75,7 +75,7 @@
                 <label class="control-label">Please Enter Training Duration in Months</label>
                 <div class="">
                     <input id="trainingDuration" ng-model="trainingDuration" name="trainingDuration" autocomplete="off" type="text" placeholder="duration of training" ng-pattern="/^[0-9]*$/" required="" /><br/>
-                    <span ng-show="qualificationData.trainingDuration.$error.pattern" style="color:red;">Enter no. of months in digits </span>
+                    <span ng-show="qualificationData.trainingDuration.$error.pattern" style="color:red;">Enter no. of months in numbers </span>
                 </div>
             </div><br/>
 
