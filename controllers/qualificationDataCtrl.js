@@ -22,7 +22,6 @@ angular.module('fundooApp')
         }
         $scope.yearOptions = year;
 
-
         //function performing on next button in form
         $scope.next = function() {
             $scope.Loading = true;

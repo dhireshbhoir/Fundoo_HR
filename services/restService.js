@@ -5,6 +5,7 @@
 angular.module("fundooApp")
     .service('restService', function($q, $http) {
         var baseUrl = "http://192.168.0.52:3030/";
+        
         /** function to POST */
         this.postRequest = function(path, query) {
             var deferred = $q.defer();

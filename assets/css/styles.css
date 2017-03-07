@@ -12,6 +12,7 @@ body {
     border-radius: 4px;
     text-align: center;
     background-color: white;
+    box-shadow: 4px 4px 2px #888888;
 }
 
 .success {
@@ -67,6 +68,7 @@ body {
     padding-bottom: 10%;
     border-radius: 2%;
     background-color: white;
+    box-shadow: 4px 4px 2px #888888;
 }
 
 .formName {

@@ -55,6 +55,7 @@ angular.module('fundooApp')
 
         //function performing on employee form button in form
         $scope.createObject = function() {
+            $scope.Loading = true;
             console.log("Object created in localstorage");
 
             /* storing empDataFormat into localstorage*/

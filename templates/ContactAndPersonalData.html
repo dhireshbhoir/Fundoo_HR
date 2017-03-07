@@ -69,6 +69,7 @@
                     <input type="radio" ng-model="annualSalary" value=">10 lacs" /> &#160;&#160;>10 Lacs
                 </div>
             </div><br/>
+
             <!-- Current address-->
             <div class="form-group required">
                 <label class="control-label">Current Address</label><br/>
@@ -92,6 +93,7 @@
                 </div>
             </div><br/><br/>
 
+            <!-- Photo-->
             <div class="form-group required">
                 <label class="control-label">Photo</label><img ng-show="contactAndPersonalDataForm.file.$valid" ngf-thumbnail="picFile" class="thumb" /><br/>
 
@@ -112,6 +114,8 @@
                     <!-- <button class="btn btn-info" ng-click="storeData(picFile)" ng-disabled="">Submit</button> -->
                 </div>
             </div>
+
+            <!-- loader-->
             <span class="loader col-md-12 col-sm-12 col-xs-12">
             <img ng-if="Loading" src="./assets/images/loader.gif" width="40px" height="40px" id="loaderimg" />
             </span>

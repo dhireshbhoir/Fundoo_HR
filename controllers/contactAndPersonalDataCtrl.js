@@ -9,9 +9,6 @@ angular.module('fundooApp')
         var contactAndPersonalJsonObject;
         var contactAndPersonalDataObject;
 
-
-        //$scope.emailFormat = /^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
-
         /*function for copying the address*/
         $scope.sameAsAbove = function() {
             if ($scope.hasChecked) {
@@ -54,11 +51,15 @@ angular.module('fundooApp')
             restService.postRequest('createEngineerData', fd)
                 .then(function(data, status, headers, config) {
                     console.log("Successful", data.data);
+
+                    /*Storing response in session storage*/
                     sessionStorage.setItem('successData', JSON.stringify(data.data));
-                    // localStorage.removeItem("EmployeeData");
+
+                    /*Storing employee data from local storage*/
+                    localStorage.removeItem("EmployeeData");
                     $state.go('successful');
                 }, function(error) {
-                    alert(error);
+                    $scope.Loading = false;
                 });
         };
 
@@ -79,10 +80,5 @@ angular.module('fundooApp')
             window.onpageshow = function(evt) {
                 if (evt.persisted) disableBack()
             }
-
-
-            // window.history.forward(-1)
-
-
         });
     });
