@@ -10,7 +10,6 @@ angular.module('fundooApp')
             $(this).scrollTop(0);
         });
 
-        console.log("BankInformation");
         var bankJsonObject;
         var bankInfoObject;
 
@@ -26,7 +25,6 @@ angular.module('fundooApp')
 
             /*calling setData from localStorageService to store data in localstorage*/
             localStorageService.setData("bank_information", bankJsonObject)
-            console.log(localStorageService.getData());
         };
 
         /*calling getData from localStorageService to get data from localstorage*/

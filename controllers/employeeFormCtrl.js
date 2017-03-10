@@ -49,14 +49,9 @@ angular.module('fundooApp')
             }
         };
 
-        console.log(empDataFormat);
-
-        console.log("inside empForm");
-
         //function performing on employee form button in form
         $scope.createObject = function() {
             $scope.Loading = true;
-            console.log("Object created in localstorage");
 
             /* storing empDataFormat into localstorage*/
             localStorage.setItem("EmployeeData", JSON.stringify(empDataFormat));

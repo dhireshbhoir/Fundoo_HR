@@ -10,8 +10,6 @@ angular.module('fundooApp')
             $(this).scrollTop(0);
         });
 
-        console.log("inside EngForm");
-
         var engineerJsonObject;
         var engineerDataObject;
 
@@ -31,7 +29,6 @@ angular.module('fundooApp')
 
             /*calling setData from localStorageService to store data in localstorage*/
             localStorageService.setData("engineer_data", engineerJsonObject)
-            console.log(localStorageService.getData());
         };
 
         /*calling getData from localStorageService to get data from localstorage*/

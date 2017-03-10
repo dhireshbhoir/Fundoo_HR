@@ -10,7 +10,6 @@ angular.module('fundooApp')
             $(this).scrollTop(0);
         });
 
-        console.log("Qualification");
         var qualificationJsonObject;
         var QualificationDataObject;
 
@@ -39,7 +38,6 @@ angular.module('fundooApp')
 
             /*calling setData from localStorageService to store data in localstorage*/
             localStorageService.setData("qualification_data", qualificationJsonObject)
-            console.log(localStorageService.getData());
         };
 
         /*calling getData from localStorageService to get data from localstorage*/

@@ -39,7 +39,7 @@
             <!-- Year of passing-->
             <div class="form-group required">
                 <label class="control-label">Year Of Passing</label><br/>
-                <select ng-model="yearOfPassing" required="" id="year" class="form-group" required="">
+                <select ng-model="yearOfPassing" id="year" class="form-group" required="">
            <option ng-repeat="option in yearOptions" value="{{option}}">{{option}}</option>
         </select>
             </div>
@@ -95,7 +95,6 @@
                 <!-- Next-->
                 <div id="next" class="col-md-6 col-sm-6 col-xs-6">
                     <button class="btn btn-info" ui-sref="contactAndPersonalData" ng-disabled="!diploma||!degree||qualificationData.$invalid||Loading" ng-click="next()">Next</button>
-                    <!-- <button class="btn btn-info" ui-sref="contactAndPersonalData" ng-disabled="" ng-click="next()">Next</button> -->
                 </div>
             </div>
 
